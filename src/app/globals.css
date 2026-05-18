@@ -1,0 +1,116 @@
+/* ============================================================
+   GLOBALS.CSS
+   This file controls ALL the visual styling of the website.
+   Colors, fonts, spacing, animations — all defined here.
+   ============================================================ */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* --- CSS Variables (your brand colors & settings) ---
+   Change these to rebrand the entire site instantly. */
+:root {
+  --bg-primary: #080c14;       /* Main dark background */
+  --bg-secondary: #0d1321;     /* Slightly lighter dark */
+  --bg-card: #111827;          /* Card backgrounds */
+  --accent: #2e86de;           /* Blue from TheTechForever logo */
+  --accent-dim: rgba(46, 134, 222, 0.12); /* Transparent accent for glows */
+  --text-primary: #f0f4ff;     /* Main text (near white) */
+  --text-secondary: #8a9bb5;   /* Muted text */
+  --border: rgba(255,255,255,0.07); /* Subtle borders */
+  --font-display: 'Syne', sans-serif;   /* Headings font */
+  --font-body: 'DM Sans', sans-serif;   /* Body text font */
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }  /* Smooth scroll when nav links are clicked */
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+p { color: var(--text-secondary); }
+
+a { text-decoration: none; color: inherit; }
+
+/* --- Reusable Section Wrapper --- */
+.section {
+  padding: 100px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* --- Section Labels (small text above headings) --- */
+.section-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* --- Section Headings --- */
+.section-title {
+  font-size: clamp(28px, 4vw, 42px); /* Responsive: scales with screen width */
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 56px;
+}
+
+/* --- Accent text color --- */
+.accent { color: var(--accent); }
+
+/* --- Fade-in animation (used throughout) --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease forwards;
+  opacity: 0;
+}
+
+/* Stagger delays so elements animate one after another */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.55s; }
+
+/* --- Horizontal divider line --- */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}

@@ -1,0 +1,136 @@
+/* ============================================================
+   Navbar.module.css
+   Styles only for the Navbar component.
+   CSS Modules = these class names won't clash with other files.
+   ============================================================ */
+
+.header {
+  position: fixed;           /* Sticks to the top of the screen */
+  top: 0; left: 0; right: 0;
+  z-index: 100;              /* Stays above all other content */
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* When user scrolls down, navbar gets a dark background + shadow */
+.scrolled {
+  background: rgba(8, 12, 20, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* LOGO IMAGE WRAPPER */
+.logoWrap {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+/* keep old .logo for reference but logoWrap is used now */
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-right: auto;
+  letter-spacing: -0.01em;
+}
+.logoAccent { color: var(--accent); }
+
+/* DESKTOP NAV LINKS */
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+.navLink:hover { color: var(--text-primary); }
+
+/* CTA BUTTON */
+.ctaBtn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bg-primary);
+  background: var(--accent);
+  padding: 10px 22px;
+  border-radius: 999px;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.ctaBtn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+/* HAMBURGER (mobile only) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* MOBILE MENU DROPDOWN */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 24px 24px;
+  background: rgba(8, 12, 20, 0.97);
+  border-top: 1px solid var(--border);
+  position: absolute;
+  top: 100%;
+  left: 0; right: 0;
+}
+
+.mobileLink {
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.mobileCta {
+  margin-top: 12px;
+  padding: 12px;
+  text-align: center;
+  background: var(--accent);
+  color: var(--bg-primary);
+  font-weight: 600;
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+/* RESPONSIVE — show hamburger on small screens */
+@media (max-width: 768px) {
+  .nav, .ctaBtn { display: none; }
+  .hamburger { display: flex; }
+  .header { padding: 16px 24px; }
+}

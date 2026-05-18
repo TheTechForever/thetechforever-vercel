@@ -1,0 +1,67 @@
+/* About.module.css */
+
+.about {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Two-column grid: text | values */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.textCol { padding-top: 8px; }
+
+.link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+.link:hover { opacity: 0.7; }
+
+/* 2x2 grid of value cards */
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.valueCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: border-color 0.3s;
+}
+.valueCard:hover { border-color: rgba(0, 212, 255, 0.3); }
+
+.icon { font-size: 24px; display: block; margin-bottom: 12px; }
+
+.valueTitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.valueDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 480px) {
+  .valuesGrid { grid-template-columns: 1fr; }
+}
