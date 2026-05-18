@@ -37,7 +37,7 @@ export default function Navbar() {
         {/* LOGO — your company logo image */}
         <a href="#hero" className={styles.logoWrap}>
           <Image
-            src="/TheTechForever-Light-Logo-Rectangle-with-white-line.png"
+            src="/logo.png"
             alt="TheTechForever Logo"
             width={140}
             height={48}
